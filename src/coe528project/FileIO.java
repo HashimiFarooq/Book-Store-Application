@@ -10,7 +10,7 @@ public final class FileIO {
     
     public static void saveBooks(){
         try {
-            FileWriter fileWriter = new FileWriter(bookFile, true);
+            FileWriter fileWriter = new FileWriter(bookFile);
             for (int i = 0; i < books.size(); i++){
                 Book book = books.get(i);
                 fileWriter.write(book.getName() + "\n");

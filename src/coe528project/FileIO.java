@@ -24,7 +24,8 @@ public final class FileIO {
     }
     
     public static void loadBooks(){
-        try {             
+        try {
+            books = new ArrayList<Book>();
             FileReader fileReader = new FileReader(bookFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             

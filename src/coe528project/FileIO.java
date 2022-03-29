@@ -24,6 +24,26 @@ public final class FileIO {
     }
     
     public static void loadBooks(){
-        
+        try {             
+            FileReader fileReader = new FileReader(bookFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            
+            String input;
+            String bookName = "";
+            String bookPrice = "";
+            while ((input = bufferedReader.readLine()) != null) {
+                bookName = input;
+                input = bufferedReader.readLine();
+                bookPrice = input;
+                
+                double price = Double.parseDouble(bookPrice);
+                
+                books.add(new Book(bookName, price));
+            }
+            fileReader.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }    
     }
 }

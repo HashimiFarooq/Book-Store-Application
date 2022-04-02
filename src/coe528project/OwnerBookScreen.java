@@ -57,6 +57,7 @@ public class OwnerBookScreen implements Initializable{
         Book bookTable = new Book(bookNameIn.getText(),
                 Integer.parseInt(bookPriceIn.getText()));
         ObservableList<Book> bookTables = tableView.getItems();
+        FileIO.books.add(bookTable);
         bookTables.add(bookTable);
         tableView.setItems(bookTables);
     }

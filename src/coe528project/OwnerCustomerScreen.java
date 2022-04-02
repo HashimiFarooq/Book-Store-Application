@@ -26,14 +26,14 @@ public class OwnerCustomerScreen implements Initializable{
     
     //Table
     @FXML
-    private TableView<OwnerCustomerTable> tableView;
+    private TableView<Customer> tableView;
     //columns
     @FXML
-    private TableColumn<OwnerCustomerTable, String> usernameCol;
+    private TableColumn<Customer, String> usernameCol;
     @FXML
-    private TableColumn<OwnerCustomerTable, String> passwordCol;
+    private TableColumn<Customer, String> passwordCol;
     @FXML
-    private TableColumn<OwnerCustomerTable, Integer> pointsCol;
+    private TableColumn<Customer, Integer> pointsCol;
     //InputText
     @FXML
     private TextField usernameIn;
@@ -50,16 +50,23 @@ public class OwnerCustomerScreen implements Initializable{
     //OWNER Customer SCREEN
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        usernameCol.setCellValueFactory(new PropertyValueFactory<OwnerCustomerTable, String>("username"));
-        passwordCol.setCellValueFactory(new PropertyValueFactory<OwnerCustomerTable, String>("password"));
-        //pointsCol.setCellValueFactory(new PropertyValueFactory<OwnerCustomerTable, Integer>("points"));
+        usernameCol.setCellValueFactory(new PropertyValueFactory<Customer, String>("username"));
+        passwordCol.setCellValueFactory(new PropertyValueFactory<Customer, String>("password"));
+        pointsCol.setCellValueFactory(new PropertyValueFactory<Customer, Integer>("points"));
+        
+        for (int i = 0; i < FileIO.customers.size(); i++){
+            Customer customer = FileIO.customers.get(i);
+            
+            tableView.getItems().add(customer);
+        }
     }
     
     @FXML
     void registerUser(ActionEvent event){
-        OwnerCustomerTable customerTable = new OwnerCustomerTable(usernameIn.getText(), (passwordIn.getText()));
-        ObservableList<OwnerCustomerTable> customerTables = tableView.getItems();
-        customerTables.add(customerTable);
+        Customer customer = new Customer(usernameIn.getText(), passwordIn.getText(), 0);
+        ObservableList<Customer> customerTables = tableView.getItems();
+        customerTables.add(customer);
+        FileIO.customers.add(customer);
         tableView.setItems(customerTables);
     }
     

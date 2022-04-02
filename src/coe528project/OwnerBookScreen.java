@@ -71,6 +71,7 @@ public class OwnerBookScreen implements Initializable{
     @FXML 
     void removeBook(ActionEvent event){
         int selectedID = tableView.getSelectionModel().getSelectedIndex();
+        FileIO.books.remove(selectedID);
         tableView.getItems().remove(selectedID);
     }
     

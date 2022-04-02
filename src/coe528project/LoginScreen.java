@@ -35,16 +35,23 @@ public class LoginScreen {
         
         Main m = new Main();
         
+        String user = username.getText();
+        String pass = password.getText();
+        
         if(username.getText().equals("admin") && password.getText().equals("admin")){
             m.changeScene("OwnerStartScreen.fxml");
         }
         
-        else if(username.getText().equals("customer") && password.getText().equals("customer")){
-            m.changeScene("CustomerStartScreen.fxml");
+        for (int i = 0; i < FileIO.customers.size(); i++){
+            if (FileIO.customers.get(i).verifyLogin(user, pass)){
+                CustomerStartScreen.setCustomer(FileIO.customers.get(i));
+                m.changeScene("CustomerStartScreen.fxml");
+                return;
+            }
         }
         
         
-        else if(username.getText().isEmpty() || password.getText().isEmpty()){
+        if(username.getText().isEmpty() || password.getText().isEmpty()){
             wrongLogin.setText("Please enter your username and password.");
         }
         

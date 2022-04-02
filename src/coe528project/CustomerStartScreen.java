@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -20,6 +21,8 @@ public class CustomerStartScreen implements Initializable{
     private Scene scene;
     private Parent root;
     
+    private static Customer customer;
+    
     @FXML
     private Button logoutButton;
     @FXML
@@ -27,9 +30,11 @@ public class CustomerStartScreen implements Initializable{
     @FXML
     private Button redeemPointsAndBuyButton;
     @FXML
-    private TableColumn<OwnerBookTable, String> bookName;
+    private TableView tableView;
     @FXML
-    private TableColumn<OwnerBookTable, Integer> bookPrice;
+    private TableColumn<Book, String> bookName;
+    @FXML
+    private TableColumn<Book, Double> bookPrice;
     @FXML
     private TableColumn<CustomerBookTable, Boolean> selectBook;
     
@@ -37,6 +42,15 @@ public class CustomerStartScreen implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        bookName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        bookPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        for (int i = 0; i < FileIO.books.size(); i++){
+            Book book = FileIO.books.get(i);
+            
+            tableView.getItems().add(book);
+        }
+        
         selectBook.setCellValueFactory(new PropertyValueFactory<CustomerBookTable, Boolean>("username"));
     }
     public void buyBook(ActionEvent event) throws IOException {
@@ -74,5 +88,8 @@ public class CustomerStartScreen implements Initializable{
      
     }
     
+    public static void setCustomer(Customer set){
+        customer = set;
+    }
 }
 

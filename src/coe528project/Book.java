@@ -1,6 +1,10 @@
 package coe528project;
 
+import java.util.ArrayList;
+
 public class Book {
+    public static ArrayList<Book> books = new ArrayList<Book>();
+    
     private String name;
     private double price;
     

@@ -50,15 +50,12 @@ public class OwnerBookScreen implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         bookName.setCellValueFactory(new PropertyValueFactory<Book, String>("name"));
         bookPrice.setCellValueFactory(new PropertyValueFactory<Book, Double>("price"));
-<<<<<<< HEAD
-=======
         
         for (int i = 0; i < FileIO.books.size(); i++){
             Book book = FileIO.books.get(i);
             
             tableView.getItems().add(book);
         }
->>>>>>> 42d2fff1b409c877c9210de54c06f6f5d7f019ff
     }
     
     @FXML

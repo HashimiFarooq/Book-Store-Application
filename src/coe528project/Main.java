@@ -32,8 +32,12 @@ public class Main extends Application {
         stg.getScene().setRoot(pane);
     }
     
-    
-    
+    @Override
+    public void stop(){
+        System.out.println("closing");
+        FileIO.saveBooks();
+        FileIO.saveCustomers();
+    }
 
     public static void main(String[] args) {
         launch(args);

@@ -73,6 +73,7 @@ public class OwnerCustomerScreen implements Initializable{
     @FXML 
     void removeUser(ActionEvent event){
         int selectedID = tableView.getSelectionModel().getSelectedIndex();
+        FileIO.customers.remove(selectedID);
         tableView.getItems().remove(selectedID);
     }
     

@@ -16,4 +16,10 @@ public abstract class User {
     public String getPassword() {
         return password;
     }
+    
+    public boolean verifyLogin(String username, String password){
+        if (this.username.equals(username) && this.password.equals(password))
+            return true;
+        return false;
+    }
 }

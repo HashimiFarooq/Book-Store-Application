@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.io.*;
 
 public final class FileIO {
-    private static String bookFile = "./books.txt";
+    private static String booksFile = "./books.txt";
     private static String customersFile = "./customers.txt";
     
     public static ArrayList<Book> books = new ArrayList<Book>();
@@ -12,7 +12,7 @@ public final class FileIO {
     
     public static void saveBooks(){
         try {
-            FileWriter fileWriter = new FileWriter(bookFile);
+            FileWriter fileWriter = new FileWriter(booksFile);
             for (int i = 0; i < books.size(); i++){
                 Book book = books.get(i);
                 fileWriter.write(book.getName() + "\n");
@@ -28,7 +28,7 @@ public final class FileIO {
     public static void loadBooks(){
         try {
             books = new ArrayList<Book>();
-            FileReader fileReader = new FileReader(bookFile);
+            FileReader fileReader = new FileReader(booksFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             
             String input;
@@ -64,5 +64,33 @@ public final class FileIO {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+    }
+    
+    public static void loadCustomers(){
+        try {
+            customers = new ArrayList<Customer>();
+            FileReader fileReader = new FileReader(customersFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            
+            String input;
+            String customerUsername;
+            String customerPassword;
+            String customerPoints;
+            while ((input = bufferedReader.readLine()) != null) {
+                customerUsername = input;
+                input = bufferedReader.readLine();
+                customerPassword = input;
+                input = bufferedReader.readLine();
+                customerPoints = input;
+                
+                int points = Integer.parseInt(customerPoints);
+                
+                customers.add(new Customer(customerUsername, customerPassword, points));
+            }
+            fileReader.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }    
     }
 }

@@ -31,7 +31,7 @@ public class OwnerBookScreen implements Initializable{
     @FXML
     private TableColumn<Book, String> bookName;
     @FXML
-    private TableColumn<Book, Integer> bookPrice;
+    private TableColumn<Book, Double> bookPrice;
     //InputText
     @FXML
     private TextField bookPriceIn;
@@ -49,7 +49,7 @@ public class OwnerBookScreen implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         bookName.setCellValueFactory(new PropertyValueFactory<Book, String>("name"));
-        bookPrice.setCellValueFactory(new PropertyValueFactory<Book, Integer>("price"));
+        bookPrice.setCellValueFactory(new PropertyValueFactory<Book, Double>("price"));
     }
     
     @FXML

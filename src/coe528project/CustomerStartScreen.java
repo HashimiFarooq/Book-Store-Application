@@ -108,7 +108,6 @@ public class CustomerStartScreen implements Initializable{
     }
     
     
-    
     public void userLogout(ActionEvent event) throws IOException {
         Main m = new Main();
         Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));

@@ -22,7 +22,7 @@ public class CustomerStartScreen implements Initializable{
     private Scene scene;
     private Parent root;
     
-    private static Customer customer;
+    private static Customer loggedIn;
     
     @FXML
     private Button logoutButton;
@@ -42,6 +42,9 @@ public class CustomerStartScreen implements Initializable{
     private TableColumn<Book, Boolean> selectBook;
     
 
+    public void welcomeMessage(){
+        welcomeMessage.setText("Welcome " + loggedIn.getUsername() + ". " + "You have "  + loggedIn.getPoints() + " points." + " Your status is " + loggedIn.getStatus() + ".");
+    }
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -57,22 +60,6 @@ public class CustomerStartScreen implements Initializable{
         selectBook.setCellValueFactory(new PropertyValueFactory<Book, Boolean>("username"));
     }
     
-    /*private void welcomeMessage() throws IOException{
-        
-        Main m = new Main();
-        
-        String user = username.getText();
-        String pass = password.getText();
-        
-        
-        for (int i = 0; i < FileIO.customers.size(); i++){
-            if (FileIO.customers.get(i).verifyLogin(user, pass)){
-                CustomerStartScreen.setCustomer(FileIO.customers.get(i));
-                welcomeMessage.setText("Welcome" + user + password)
-                return;
-            }
-        }
-    }    */
     public void buyBook(ActionEvent event) throws IOException {
         Main m = new Main();
         Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
@@ -108,7 +95,7 @@ public class CustomerStartScreen implements Initializable{
     }
     
     public static void setCustomer(Customer set){
-        customer = set;
+        loggedIn = set;
     }
 }
 

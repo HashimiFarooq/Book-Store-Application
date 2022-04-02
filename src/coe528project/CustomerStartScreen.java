@@ -20,6 +20,8 @@ public class CustomerStartScreen implements Initializable{
     private Scene scene;
     private Parent root;
     
+    private static Customer customer;
+    
     @FXML
     private Button logoutButton;
     @FXML
@@ -74,5 +76,8 @@ public class CustomerStartScreen implements Initializable{
      
     }
     
+    public static void setCustomer(Customer set){
+        customer = set;
+    }
 }
 

@@ -31,7 +31,7 @@ public class OwnerCustomerScreen implements Initializable{
     @FXML
     private TableColumn<OwnerCustomerTable, String> usernameCol;
     @FXML
-    private TableColumn<OwnerCustomerTable, Integer> passwordCol;
+    private TableColumn<OwnerCustomerTable, String> passwordCol;
     @FXML
     private TableColumn<OwnerCustomerTable, Integer> pointsCol;
     //InputText
@@ -51,14 +51,13 @@ public class OwnerCustomerScreen implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         usernameCol.setCellValueFactory(new PropertyValueFactory<OwnerCustomerTable, String>("username"));
-        passwordCol.setCellValueFactory(new PropertyValueFactory<OwnerCustomerTable, Integer>("password"));
+        passwordCol.setCellValueFactory(new PropertyValueFactory<OwnerCustomerTable, String>("password"));
         //pointsCol.setCellValueFactory(new PropertyValueFactory<OwnerCustomerTable, Integer>("points"));
     }
     
     @FXML
     void registerUser(ActionEvent event){
-        OwnerCustomerTable customerTable = new OwnerCustomerTable(usernameIn.getText(),
-                Integer.parseInt(passwordIn.getText()));
+        OwnerCustomerTable customerTable = new OwnerCustomerTable(usernameIn.getText(), (passwordIn.getText()));
         ObservableList<OwnerCustomerTable> customerTables = tableView.getItems();
         customerTables.add(customerTable);
         tableView.setItems(customerTables);

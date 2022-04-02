@@ -2,10 +2,10 @@ package coe528project;
 
 public class OwnerCustomerTable {
         private String username;
-        private int password;
+        private String password;
         //private int points;
         
-        public OwnerCustomerTable(String username, int password) {
+        public OwnerCustomerTable(String username, String password) {
             this.username = username;
             this.password = password;
         }
@@ -18,11 +18,11 @@ public class OwnerCustomerTable {
         this.username = username;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
    

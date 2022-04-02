@@ -1,6 +1,6 @@
 package coe528project;
 
-public class User {
+public abstract class User {
     private String username;
     private String password;
     

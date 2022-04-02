@@ -1,7 +1,5 @@
 package coe528project;
 
-import java.util.ArrayList;
-
 public class Customer extends User{
     
     private int points;

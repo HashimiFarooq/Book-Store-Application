@@ -61,7 +61,7 @@ public class OwnerBookScreen implements Initializable{
     @FXML
     void addBook(ActionEvent event){
         Book bookTable = new Book(bookNameIn.getText(),
-                Integer.parseInt(bookPriceIn.getText()));
+        Double.parseDouble(bookPriceIn.getText()));
         ObservableList<Book> bookTables = tableView.getItems();
         FileIO.books.add(bookTable);
         bookTables.add(bookTable);

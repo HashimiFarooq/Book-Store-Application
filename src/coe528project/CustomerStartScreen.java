@@ -42,7 +42,7 @@ public class CustomerStartScreen implements Initializable{
     private TableColumn<Book, Boolean> selectBook;
     
 
-    public void welcomeMessage(){
+    public void welcome(){
         welcomeMessage.setText("Welcome " + loggedIn.getUsername() + ". " + "You have "  + loggedIn.getPoints() + " points." + " Your status is " + loggedIn.getStatus() + ".");
     }
     
@@ -56,9 +56,10 @@ public class CustomerStartScreen implements Initializable{
             
             tableView.getItems().add(book);
         }
-        
+        welcome();
         selectBook.setCellValueFactory(new PropertyValueFactory<Book, Boolean>("username"));
     }
+    
     
     public void buyBook(ActionEvent event) throws IOException {
         Main m = new Main();

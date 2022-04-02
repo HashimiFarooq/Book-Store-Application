@@ -64,25 +64,13 @@ public class CustomerStartScreen implements Initializable{
         String user = username.getText();
         String pass = password.getText();
         
-        if(username.getText().equals("admin") && password.getText().equals("admin")){
-            m.changeScene("OwnerStartScreen.fxml");
-        }
         
         for (int i = 0; i < FileIO.customers.size(); i++){
             if (FileIO.customers.get(i).verifyLogin(user, pass)){
                 CustomerStartScreen.setCustomer(FileIO.customers.get(i));
-                m.changeScene("CustomerStartScreen.fxml");
+                welcomeMessage.setText("Welcome" + user + password)
                 return;
             }
-        }
-        
-        
-        if(username.getText().isEmpty() || password.getText().isEmpty()){
-            welcomeMessage.setText("Please enter your username and password.");
-        }
-        
-        else{
-            welcomeMessage.setText("Incorrect username or password!");
         }
     }    */
     public void buyBook(ActionEvent event) throws IOException {

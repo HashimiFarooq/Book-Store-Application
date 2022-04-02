@@ -26,12 +26,12 @@ public class OwnerBookScreen implements Initializable{
     
     //Table
     @FXML
-    private TableView<OwnerBookTable> tableView;
+    private TableView<Book> tableView;
     //columns
     @FXML
-    private TableColumn<OwnerBookTable, String> bookName;
+    private TableColumn<Book, String> bookName;
     @FXML
-    private TableColumn<OwnerBookTable, Integer> bookPrice;
+    private TableColumn<Book, Integer> bookPrice;
     //InputText
     @FXML
     private TextField bookPriceIn;
@@ -48,15 +48,15 @@ public class OwnerBookScreen implements Initializable{
     //OWNER BOOK SCREEN
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        bookName.setCellValueFactory(new PropertyValueFactory<OwnerBookTable, String>("name"));
-        bookPrice.setCellValueFactory(new PropertyValueFactory<OwnerBookTable, Integer>("price"));
+        bookName.setCellValueFactory(new PropertyValueFactory<Book, String>("name"));
+        bookPrice.setCellValueFactory(new PropertyValueFactory<Book, Integer>("price"));
     }
     
     @FXML
     void addBook(ActionEvent event){
-        OwnerBookTable bookTable = new OwnerBookTable(bookNameIn.getText(),
+        Book bookTable = new Book(bookNameIn.getText(),
                 Integer.parseInt(bookPriceIn.getText()));
-        ObservableList<OwnerBookTable> bookTables = tableView.getItems();
+        ObservableList<Book> bookTables = tableView.getItems();
         bookTables.add(bookTable);
         tableView.setItems(bookTables);
     }

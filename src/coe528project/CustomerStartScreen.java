@@ -36,7 +36,7 @@ public class CustomerStartScreen implements Initializable{
     @FXML
     private TableColumn<Book, Double> bookPrice;
     @FXML
-    private TableColumn<CustomerBookTable, Boolean> selectBook;
+    private TableColumn<Book, Boolean> selectBook;
     
 
     
@@ -51,7 +51,7 @@ public class CustomerStartScreen implements Initializable{
             tableView.getItems().add(book);
         }
         
-        selectBook.setCellValueFactory(new PropertyValueFactory<CustomerBookTable, Boolean>("username"));
+        selectBook.setCellValueFactory(new PropertyValueFactory<Book, Boolean>("username"));
     }
     public void buyBook(ActionEvent event) throws IOException {
         Main m = new Main();

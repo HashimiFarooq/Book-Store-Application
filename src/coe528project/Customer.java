@@ -12,4 +12,11 @@ public class Customer extends User{
     public int getPoints() {
         return points;
     }
+    
+    public String getStatus(){
+        if (points >= 1000){
+            return "Gold";
+        }
+        return "Silver";
+    }
 }

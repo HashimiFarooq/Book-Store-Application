@@ -6,9 +6,9 @@ import java.io.*;
 public final class FileIO {
     private static String booksFile = "./books.txt";
     private static String customersFile = "./customers.txt";
-    
-    public static ArrayList<Book> books = Book.books;
-    public static ArrayList<Customer> customers = Customer.customers;
+
+    public static ArrayList<Book> books = new ArrayList<Book>();
+    public static ArrayList<Customer> customers = new ArrayList<Customer>();
     
     public static void saveBooks(){
         try {

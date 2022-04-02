@@ -38,13 +38,12 @@ public class LoginScreen {
         String user = username.getText();
         String pass = password.getText();
         
-        
         if(username.getText().equals("admin") && password.getText().equals("admin")){
             m.changeScene("OwnerStartScreen.fxml");
         }
         
-        for (int i = 0; i < Customer.customers.size(); i++){
-            if (Customer.customers.get(i).verifyLogin(user, pass)){
+        for (int i = 0; i < FileIO.customers.size(); i++){
+            if (FileIO.customers.get(i).verifyLogin(user, pass)){
                 m.changeScene("CustomerStartScreen.fxml");
                 return;
             }

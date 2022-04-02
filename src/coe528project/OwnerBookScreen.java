@@ -50,7 +50,6 @@ public class OwnerBookScreen implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         bookName.setCellValueFactory(new PropertyValueFactory<Book, String>("name"));
         bookPrice.setCellValueFactory(new PropertyValueFactory<Book, Double>("price"));
-
         
         for (int i = 0; i < FileIO.books.size(); i++){
             Book book = FileIO.books.get(i);
@@ -62,7 +61,7 @@ public class OwnerBookScreen implements Initializable{
     @FXML
     void addBook(ActionEvent event){
         Book bookTable = new Book(bookNameIn.getText(),
-                Integer.parseInt(bookPriceIn.getText()));
+        Double.parseDouble(bookPriceIn.getText()));
         ObservableList<Book> bookTables = tableView.getItems();
         FileIO.books.add(bookTable);
         bookTables.add(bookTable);
@@ -72,6 +71,7 @@ public class OwnerBookScreen implements Initializable{
     @FXML 
     void removeBook(ActionEvent event){
         int selectedID = tableView.getSelectionModel().getSelectedIndex();
+        FileIO.books.remove(selectedID);
         tableView.getItems().remove(selectedID);
     }
     

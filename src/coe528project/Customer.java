@@ -8,4 +8,8 @@ public class Customer extends User{
         super(username, password);
         this.points = points;
     }
+
+    public int getPoints() {
+        return points;
+    }
 }

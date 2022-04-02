@@ -5,8 +5,10 @@ import java.io.*;
 
 public final class FileIO {
     private static String bookFile = "./books.txt";
+    private static String customersFile = "./customers.txt";
     
     public static ArrayList<Book> books = new ArrayList<Book>();
+    public static ArrayList<Customer> customers = new ArrayList<Customer>();
     
     public static void saveBooks(){
         try {
@@ -46,5 +48,21 @@ public final class FileIO {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }    
+    }
+    
+    public static void saveCustomers(){
+        try {
+            FileWriter fileWriter = new FileWriter(customersFile);
+            for (int i = 0; i < customers.size(); i++){
+                Customer customer = customers.get(i);
+                fileWriter.write(customer.getUsername() + "\n");
+                fileWriter.write(customer.getPassword() + "\n");
+                fileWriter.write(customer.getPoints() + "\n");
+            }
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }

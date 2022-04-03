@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -35,11 +36,11 @@ public class CustomerStartScreen implements Initializable{
     @FXML
     private TableView tableView;
     @FXML
-    private TableColumn<Book, String> bookName;
+    private TableColumn<BookSelect, String> bookName;
     @FXML
-    private TableColumn<Book, Double> bookPrice;
+    private TableColumn<BookSelect, Double> bookPrice;
     @FXML
-    private TableColumn<Book, Boolean> selectBook;
+    private TableColumn<BookSelect, CheckBox> selectBook;
     
 
     public void welcome(){
@@ -50,14 +51,14 @@ public class CustomerStartScreen implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         bookName.setCellValueFactory(new PropertyValueFactory<>("name"));
         bookPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-
+        selectBook.setCellValueFactory(new PropertyValueFactory<>("checkBox"));
+        
         for (int i = 0; i < FileIO.books.size(); i++){
             Book book = FileIO.books.get(i);
             
-            tableView.getItems().add(book);
+            tableView.getItems().add(new BookSelect(book));
         }
         welcome();
-        selectBook.setCellValueFactory(new PropertyValueFactory<Book, Boolean>("username"));
     }
     
     

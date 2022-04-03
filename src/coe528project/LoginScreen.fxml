@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -12,34 +13,37 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coe528project.LoginScreen">
    <right>
-      <AnchorPane prefHeight="400.0" prefWidth="430.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="400.0" prefWidth="430.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="username" layoutX="113.0" layoutY="143.0" promptText="Username">
+            <TextField fx:id="username" layoutX="113.0" layoutY="143.0" prefHeight="29.0" prefWidth="200.0" promptText="Username">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Eras Light ITC" size="16.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="password" layoutX="113.0" layoutY="200.0" promptText="Password">
+            <PasswordField fx:id="password" layoutX="113.0" layoutY="200.0" prefHeight="29.0" prefWidth="201.0" promptText="Password">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Eras Light ITC" size="16.0" />
                </font>
             </PasswordField>
-            <Button fx:id="loginButton" layoutX="181.0" layoutY="269.0" mnemonicParsing="false" onAction="#userLogin" text="Login">
+            <Button fx:id="loginButton" layoutX="113.0" layoutY="268.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="35.0" prefWidth="201.0" text="Login">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Eras Medium ITC" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Label fx:id="loginLabel" layoutX="85.0" layoutY="63.0" text="Login to Book Store">
+            <Label fx:id="loginLabel" layoutX="89.0" layoutY="64.0" text="Login To Book Store" textFill="WHITE">
                <font>
-                  <Font name="Berlin Sans FB" size="31.0" />
+                  <Font name="Eras Light ITC" size="30.0" />
                </font>
             </Label>
-            <Label fx:id="wrongLogin" layoutX="51.0" layoutY="330.0" prefHeight="17.0" prefWidth="348.0" />
+            <Label fx:id="wrongLogin" alignment="CENTER" layoutX="39.0" layoutY="330.0" prefHeight="17.0" prefWidth="348.0" textFill="#970000" />
          </children>
       </AnchorPane>
    </right>
    <left>
-      <ImageView fitHeight="415.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fitHeight="415.0" fitWidth="375.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@images/Book.jpg" />
          </image>

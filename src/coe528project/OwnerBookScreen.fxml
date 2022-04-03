@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -8,40 +9,49 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="621.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coe528project.OwnerBookScreen">
+<AnchorPane id="AnchorPane" prefHeight="621.0" prefWidth="501.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coe528project.OwnerBookScreen">
    <children>
-      <TableView fx:id="tableView" layoutX="-1.0" prefHeight="374.0" prefWidth="508.0">
+      <TableView fx:id="tableView" layoutX="-1.0" prefHeight="374.0" prefWidth="508.0" style="-fx-background-color: #000000;">
         <columns>
           <TableColumn fx:id="bookName" prefWidth="264.0" text="Book Name" />
           <TableColumn fx:id="bookPrice" prefWidth="243.0" text="Book Price" />
         </columns>
       </TableView>
-      <Button fx:id="addButton" layoutX="328.0" layoutY="425.0" mnemonicParsing="false" onAction="#addBook" prefHeight="25.0" prefWidth="63.0" text="Add">
+      <Button fx:id="addButton" layoutX="328.0" layoutY="425.0" mnemonicParsing="false" onAction="#addBook" prefHeight="41.0" prefWidth="63.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Add" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Eras Medium ITC" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Label layoutX="68.0" layoutY="412.0" prefHeight="25.0" prefWidth="54.0" text="Name:">
+      <Label layoutX="68.0" layoutY="412.0" prefHeight="25.0" prefWidth="54.0" text="Name:" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font name="Eras Medium ITC" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="68.0" layoutY="451.0" prefHeight="25.0" prefWidth="63.0" text="Price:">
+      <Label layoutX="68.0" layoutY="451.0" prefHeight="25.0" prefWidth="63.0" text="Price:" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font name="Eras Medium ITC" size="16.0" />
          </font>
       </Label>
       <TextField fx:id="bookNameIn" layoutX="136.0" layoutY="412.0" />
       <TextField fx:id="bookPriceIn" layoutX="136.0" layoutY="451.0" />
-      <Button fx:id="backButton" layoutX="328.0" layoutY="524.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="63.0" text="Back">
+      <Button fx:id="backButton" layoutX="328.0" layoutY="524.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="63.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Back" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button fx:id="deleteButton" layoutX="136.0" layoutY="524.0" mnemonicParsing="false" onAction="#removeBook" prefHeight="39.0" prefWidth="77.0" text="Delete">
+      <Button fx:id="deleteButton" layoutX="136.0" layoutY="524.0" mnemonicParsing="false" onAction="#removeBook" prefHeight="41.0" prefWidth="84.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Delete" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>

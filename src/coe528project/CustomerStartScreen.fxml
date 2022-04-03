@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coe528project.CustomerStartScreen">
    <children>
-      <Label fx:id="welcomeMessage" layoutX="14.0" layoutY="2.0" prefHeight="45.0" prefWidth="728.0" textAlignment="CENTER">
+      <Label fx:id="welcomeMessage" alignment="CENTER" layoutX="14.0" layoutY="2.0" prefHeight="45.0" prefWidth="728.0" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
@@ -17,12 +17,21 @@
       <TableView fx:id="tableView" layoutY="47.0" prefHeight="257.0" prefWidth="750.0" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
         <columns>
           <TableColumn fx:id="bookName" prefWidth="329.0" text="Book Name" />
-          <TableColumn fx:id="bookPrice" minWidth="0.0" prefWidth="329.0" text="Book Price" />
-            <TableColumn fx:id="selectBook" prefWidth="91.0" text="Select" />
+          <TableColumn fx:id="bookPrice" minWidth="0.0" prefWidth="313.0" text="Book Price" />
+            <TableColumn fx:id="selectBook" prefWidth="107.0" text="Select" />
         </columns>
       </TableView>
-      <Button fx:id="buyButton" layoutX="80.0" layoutY="329.0" mnemonicParsing="false" onAction="#buyBook" prefHeight="45.0" prefWidth="94.0" text="Buy" />
-      <Button fx:id="redeemPointsAndBuyButton" layoutX="282.0" layoutY="329.0" mnemonicParsing="false" onAction="#redeemPointsAndBuyBook" prefHeight="45.0" prefWidth="193.0" text="Redeem Points and Buy" />
-      <Button fx:id="logoutButton" layoutX="588.0" layoutY="329.0" mnemonicParsing="false" onAction="#userLogout" prefHeight="45.0" prefWidth="94.0" text="Logout" />
+      <Button fx:id="buyButton" layoutX="80.0" layoutY="329.0" mnemonicParsing="false" onAction="#buyBook" prefHeight="45.0" prefWidth="94.0" text="Buy">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button fx:id="redeemPointsAndBuyButton" layoutX="282.0" layoutY="329.0" mnemonicParsing="false" onAction="#redeemPointsAndBuyBook" prefHeight="45.0" prefWidth="204.0" text="Redeem Points and Buy">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button fx:id="logoutButton" layoutX="584.0" layoutY="329.0" mnemonicParsing="false" onAction="#userLogout" prefHeight="45.0" prefWidth="94.0" text="Logout">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
    </children>
 </AnchorPane>

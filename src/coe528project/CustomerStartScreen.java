@@ -96,6 +96,19 @@ public class CustomerStartScreen implements Initializable{
      
     }
     
+    public static double getTotalCost(){
+        double total = 0;
+        for (int i = 0; i < selected.size(); i++){
+            if (selected.get(i).isSelected()){
+                total += selected.get(i).getPrice();
+                selected.remove(i);
+                i--;
+            }
+        }
+        
+        return total;
+    }
+    
     public static void setCustomer(Customer set){
         loggedIn = set;
     }

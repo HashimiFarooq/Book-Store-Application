@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class CustomerCostScreen implements Initializable{
+public class CustomerCostScreen{
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -28,11 +28,6 @@ public class CustomerCostScreen implements Initializable{
     @FXML
     private TextField status;
     
-    
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        
-    }
     
     public void userLogout(ActionEvent event) throws IOException {
         Main m = new Main();

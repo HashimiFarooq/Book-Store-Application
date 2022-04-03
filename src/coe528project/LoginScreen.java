@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import java.io.File;
 
 public class LoginScreen {
     
@@ -49,7 +48,6 @@ public class LoginScreen {
                 return;
             }
         }
-        
         
         if(username.getText().isEmpty() || password.getText().isEmpty()){
             wrongLogin.setText("Please enter your username and password.");

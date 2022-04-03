@@ -55,10 +55,10 @@ public class CustomerCostScreen implements Initializable {
         
         if (redeem){
             total = loggedIn.deductPoints((int)(total * 100)) / 100.0;
-        } else {
-            loggedIn.addPoints((int)total * 10);
         }
         
+        loggedIn.addPoints((int)total * 10);
+
         totalCost.setText(String.valueOf(total));
         points.setText(String.valueOf(loggedIn.getPoints()));
         status.setText(loggedIn.getStatus());

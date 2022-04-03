@@ -76,13 +76,11 @@ public class OwnerBookScreen implements Initializable{
     }
     
     public void back(ActionEvent event) throws IOException {
-        Main m = new Main();
         Parent root = FXMLLoader.load(getClass().getResource("OwnerStartScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        m.changeScene("OwnerStartScreen.fxml");
     }
     
     //---------------------------------------------------------------------

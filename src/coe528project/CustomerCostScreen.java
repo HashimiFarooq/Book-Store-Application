@@ -40,13 +40,11 @@ public class CustomerCostScreen //implements Initializable
     private Label points;
 
     public void userLogout(ActionEvent event) throws IOException {
-        Main m = new Main();
         Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        m.changeScene("LoginScreen.fxml");
     }
 
     /*@Override

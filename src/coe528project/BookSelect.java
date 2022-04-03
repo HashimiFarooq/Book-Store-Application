@@ -8,10 +8,10 @@ public class BookSelect {
     private double price;
     private CheckBox checkBox;
 
-    public BookSelect(String name, double price, CheckBox checkBox) {
-        this.name = name;
-        this.price = price;
-        this.checkBox = checkBox;
+    public BookSelect(Book book) {
+        this.name = book.getName();
+        this.price = book.getPrice();
+        this.checkBox = new CheckBox();
     }
 
     BookSelect(int i, String naesdasda, CheckBox ch) {
@@ -32,13 +32,5 @@ public class BookSelect {
 
     public double getPrice() {
         return price;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 }

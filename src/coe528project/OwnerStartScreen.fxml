@@ -11,15 +11,15 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="logoutButton" layoutX="296.0" layoutY="273.0" mnemonicParsing="false" onAction="#userLogout" prefHeight="53.0" prefWidth="163.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Logout" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+               <font>
+                  <Font name="Eras Medium ITC" size="24.0" />
+               </font></Button>
             <Button fx:id="booksButton" layoutX="296.0" layoutY="77.0" mnemonicParsing="false" onAction="#books" prefHeight="53.0" prefWidth="158.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Books" textFill="WHITE">
                <font>
-                  <Font name="Eras Light ITC" size="24.0" />
+                  <Font name="Eras Medium ITC" size="24.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -27,7 +27,7 @@
             </Button>
             <Button fx:id="customersButton" layoutX="296.0" layoutY="174.0" mnemonicParsing="false" onAction="#customers" prefHeight="53.0" prefWidth="161.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF;" text="Customers" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Eras Medium ITC" size="24.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />

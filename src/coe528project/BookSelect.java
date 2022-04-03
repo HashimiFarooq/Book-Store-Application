@@ -7,13 +7,11 @@ public class BookSelect {
     private String name;
     private double price;
     private CheckBox checkBox;
-    private int id;
 
-    public BookSelect(Book book, int id) {
+    public BookSelect(Book book) {
         this.name = book.getName();
         this.price = book.getPrice();
         this.checkBox = new CheckBox();
-        this.id = id;
     }
 
     public CheckBox getCheckBox() {
@@ -34,9 +32,5 @@ public class BookSelect {
     
     public boolean isSelected(){
         return checkBox.isSelected();
-    }
-    
-    public int getId(){
-        return this.id;
     }
 }

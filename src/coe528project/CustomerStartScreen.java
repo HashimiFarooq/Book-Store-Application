@@ -2,6 +2,7 @@ package coe528project;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +25,7 @@ public class CustomerStartScreen implements Initializable{
     private Parent root;
     
     private static Customer loggedIn;
+    private static ArrayList<BookSelect> selected = new ArrayList<BookSelect>();
     
     @FXML
     private Button logoutButton;
@@ -56,7 +58,7 @@ public class CustomerStartScreen implements Initializable{
         for (int i = 0; i < FileIO.books.size(); i++){
             Book book = FileIO.books.get(i);
             
-            tableView.getItems().add(new BookSelect(book, i));
+            tableView.getItems().add(new BookSelect(book));
         }
         welcome();
     }

@@ -69,36 +69,30 @@ public class CustomerStartScreen implements Initializable{
     
     
     public void buyBook(ActionEvent event) throws IOException {
-        Main m = new Main();
         Parent root = FXMLLoader.load(getClass().getResource("CustomerCostScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        m.changeScene("CustomerCostScreen.fxml");
      
     }
     
     public void redeemPointsAndBuyBook(ActionEvent event) throws IOException {
-        Main m = new Main();
         Parent root = FXMLLoader.load(getClass().getResource("CustomerCostScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        m.changeScene("CustomerCostScreen.fxml");
      
     }
     
     
     public void userLogout(ActionEvent event) throws IOException {
-        Main m = new Main();
         Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        m.changeScene("LoginScreen.fxml");
      
     }
     

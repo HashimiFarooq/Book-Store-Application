@@ -27,6 +27,7 @@ public class CustomerCostScreen implements Initializable {
     String usesPoints;
     
     private static Customer loggedIn;
+    public static boolean redeem;
     
     @FXML
     private Label totalCost;
@@ -51,7 +52,12 @@ public class CustomerCostScreen implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         double total = CustomerStartScreen.getTotalCost();
-        loggedIn.addPoints((int)total * 10);
+        
+        if (redeem){
+            total = loggedIn.deductPoints((int)(total * 100)) / 100.0;
+        } else {
+            loggedIn.addPoints((int)total * 10);
+        }
         
         totalCost.setText(String.valueOf(total));
         points.setText(String.valueOf(loggedIn.getPoints()));

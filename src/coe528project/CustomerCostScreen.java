@@ -1,20 +1,17 @@
 package coe528project;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class CustomerCostScreen{
+public class CustomerCostScreen {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -22,11 +19,11 @@ public class CustomerCostScreen{
     @FXML
     private Button logoutButton;
     @FXML
-    private TextField totalCost;
+    private Label totalCost;
     @FXML
-    private TextField points;
+    private Label points;
     @FXML
-    private TextField status;
+    private Label status;
     
     
     public void userLogout(ActionEvent event) throws IOException {

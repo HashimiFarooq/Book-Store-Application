@@ -16,8 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class CustomerCostScreen //implements Initializable 
-{
+public class CustomerCostScreen implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -26,6 +25,9 @@ public class CustomerCostScreen //implements Initializable
     double totalPrice;
     boolean withPoints;
     String usesPoints;
+    
+    private static Customer loggedIn;
+    public static boolean redeem;
     
     @FXML
     private Label totalCost;
@@ -45,6 +47,21 @@ public class CustomerCostScreen //implements Initializable
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        double total = CustomerStartScreen.getTotalCost();
+        
+        if (redeem){
+            total = loggedIn.deductPoints((int)(total * 100)) / 100.0;
+        }
+        
+        loggedIn.addPoints((int)total * 10);
+
+        totalCost.setText(String.valueOf(total));
+        points.setText(String.valueOf(loggedIn.getPoints()));
+        status.setText(loggedIn.getStatus());
     }
 
     /*@Override
@@ -86,4 +103,8 @@ public class CustomerCostScreen //implements Initializable
         
         cf.write();
     }*/
+    
+    public static void setCustomer(Customer set){
+        loggedIn = set;
+    }
 }

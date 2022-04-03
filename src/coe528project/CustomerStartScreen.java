@@ -51,6 +51,7 @@ public class CustomerStartScreen implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        selected.clear();
         bookName.setCellValueFactory(new PropertyValueFactory<>("name"));
         bookPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         selectBook.setCellValueFactory(new PropertyValueFactory<>("checkBox"));
@@ -69,6 +70,8 @@ public class CustomerStartScreen implements Initializable{
     
     
     public void buyBook(ActionEvent event) throws IOException {
+        CustomerCostScreen.redeem = false;
+        CustomerCostScreen.setCustomer(loggedIn);
         Parent root = FXMLLoader.load(getClass().getResource("CustomerCostScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -78,6 +81,8 @@ public class CustomerStartScreen implements Initializable{
     }
     
     public void redeemPointsAndBuyBook(ActionEvent event) throws IOException {
+        CustomerCostScreen.redeem = true;
+        CustomerCostScreen.setCustomer(loggedIn);
         Parent root = FXMLLoader.load(getClass().getResource("CustomerCostScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -101,6 +106,7 @@ public class CustomerStartScreen implements Initializable{
         for (int i = 0; i < selected.size(); i++){
             if (selected.get(i).isSelected()){
                 total += selected.get(i).getPrice();
+                FileIO.books.remove(i);
                 selected.remove(i);
                 i--;
             }

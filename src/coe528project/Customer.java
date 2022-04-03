@@ -24,7 +24,15 @@ public class Customer extends User{
         this.points += points;
     }
     
-    public void deductPoints(int points){
+    public int deductPoints(int points){
+        if (points > this.points){
+            int remainder = points - this.points;
+            this.points = 0;
+            return remainder;
+        }
+        
         this.points -= points;
+        
+        return 0;
     }
 }

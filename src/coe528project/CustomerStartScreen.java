@@ -56,7 +56,7 @@ public class CustomerStartScreen implements Initializable{
         for (int i = 0; i < FileIO.books.size(); i++){
             Book book = FileIO.books.get(i);
             
-            tableView.getItems().add(new BookSelect(book));
+            tableView.getItems().add(new BookSelect(book, i));
         }
         welcome();
     }

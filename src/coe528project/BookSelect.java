@@ -7,15 +7,13 @@ public class BookSelect {
     private String name;
     private double price;
     private CheckBox checkBox;
+    private int id;
 
-    public BookSelect(Book book) {
+    public BookSelect(Book book, int id) {
         this.name = book.getName();
         this.price = book.getPrice();
         this.checkBox = new CheckBox();
-    }
-
-    BookSelect(int i, String naesdasda, CheckBox ch) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.id = id;
     }
 
     public CheckBox getCheckBox() {
@@ -32,5 +30,13 @@ public class BookSelect {
 
     public double getPrice() {
         return price;
+    }
+    
+    public boolean isSelected(){
+        return checkBox.isSelected();
+    }
+    
+    public int getId(){
+        return this.id;
     }
 }

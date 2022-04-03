@@ -69,6 +69,7 @@ public class CustomerStartScreen implements Initializable{
     
     
     public void buyBook(ActionEvent event) throws IOException {
+        CustomerCostScreen.setCustomer(loggedIn);
         Parent root = FXMLLoader.load(getClass().getResource("CustomerCostScreen.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

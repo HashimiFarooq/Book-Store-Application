@@ -51,6 +51,7 @@ public class CustomerStartScreen implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        selected.clear();
         bookName.setCellValueFactory(new PropertyValueFactory<>("name"));
         bookPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         selectBook.setCellValueFactory(new PropertyValueFactory<>("checkBox"));
@@ -102,6 +103,7 @@ public class CustomerStartScreen implements Initializable{
         for (int i = 0; i < selected.size(); i++){
             if (selected.get(i).isSelected()){
                 total += selected.get(i).getPrice();
+                FileIO.books.remove(i);
                 selected.remove(i);
                 i--;
             }

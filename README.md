@@ -1,2 +1,2 @@
 # Book-Store-Application
-Updated soon
+Book Store Application
